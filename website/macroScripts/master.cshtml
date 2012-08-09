@@ -1,0 +1,76 @@
+﻿@using umbraco
+@using umbraco.MacroEngines;
+@using umbraco.Linq
+
+
+@{
+    dynamic posicio = @Model.AncestorOrSelf("master");
+    dynamic tematica = @Model.AncestorOrSelf("home");
+}
+@{
+    if (Model.NodeTypeAlias == "master")
+    {
+        HttpContext.Current.Response.Redirect(Model.Children[0].Url);
+    }
+}
+
+
+
+<div class="columna_central" id="central">
+<div class="header">
+    <div class="logo">
+        <a href="@tematica.Url" >
+                <img src="@posicio.logo.mediaItem[0].Image.umbracoFile" alt="Llongueras Clotet Arquitectes Barcelona" />
+        </a>
+    </div>
+
+     <ul class="idioma">
+        @{
+            string redirect = "";
+            dynamic myIdiom = Model.AncestorOrSelf("home");
+            dynamic webSite = Model.Ancestors("master");
+            dynamic homeList = webSite[0].Descendants("home");
+            if (!homeList.IsNull() && homeList.Count() > 0)
+            {
+                foreach (dynamic home in homeList)
+                {
+                    redirect = @home.Url; 
+                    <li class="@(home.IsFirst() ? "first" : "none")">
+                        <a href="@redirect" title="@home.nomIdioma" class="@(home.Id == myIdiom.Id ? "seleccionat" : "")">
+                        @home.nomIdioma.ToUpper()
+                        </a>
+                    </li>
+                }
+            }
+        }
+    </ul>
+
+   <ul class="menu">
+        @foreach (var item in @tematica.Descendants(2).Take(2))
+        {
+            <li>
+                <a href="@item.Url">@item.Name.ToUpper()</a>
+            </li>
+        }    
+    </ul>
+
+    <ul class="menuProjectes">
+            @foreach (var item in @tematica.Descendants("tematica"))
+            {
+                if (string.Compare(@item.Name, "Projectes") != 0)
+                {
+                    foreach (var node in @item.Descendants("Projectes").Take(1))
+                    {
+                        <li>
+                            <a href="@node.Url">@item.Name.ToUpper()</a>
+                        </li>
+                    }
+                }
+            }
+    </ul>
+        
+    <div class="linea">
+        <img src="@posicio.linea.mediaItem[0].Image.umbracoFile" alt="" />
+    </div>
+</div>
+</div>

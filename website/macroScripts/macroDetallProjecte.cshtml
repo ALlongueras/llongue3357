@@ -1,0 +1,51 @@
+﻿@using umbraco
+@using umbraco.MacroEngines
+@using System.Linq
+@inherits umbraco.MacroEngines.DynamicNodeContext
+
+<script
+    src="/scripts/projectes.js" type="text/javascript">
+</script>
+
+<div id="imatgesProjectes">
+    <div class="imatgeGran">
+        <img src="@Model.imatgesDelProjecte.mediaItem[0].Image.umbracoFile" alt="@Model.Name"/>
+    </div>
+    <div class="descripcioProjecte">
+        @{
+            <h1 class="hide">@Model.Name @Dictionary.keywords</h1>
+            if (Model.titulProjecte != null)
+            {
+                <h2>@Model.titulProjecte</h2>
+            }
+            if (Model.subtitulProjecte != null)
+            {
+                <h3>@Model.subtitulProjecte</h3>
+            }
+            if (Model.localitzacioProjecte != null)
+            {
+                <h4>@Model.localitzacioProjecte</h4>
+            }
+            if (Model.clientProjecte != null)
+            {
+                <h5>@Dictionary.client @Model.clientProjecte</h5>
+            }
+        }
+        <p>@Model.descripcio</p>
+    </div>
+    <ul class="contenidorImatges">
+        @{
+            if (Model.HasValue("imatgesDelProjecte"))
+            {
+                foreach (var imatge in Model.imatgesDelProjecte.mediaItem)
+                {
+                    <li>
+                        <a href="#">
+                            <img src="@imatge.Image.umbracoFile" alt="@Model.Name"/>
+                        </a>
+                    </li> 
+                }
+            }
+        }
+    </ul>
+</div>

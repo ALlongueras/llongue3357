@@ -1,0 +1,233 @@
+#central{
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+    overflow: hidden;
+}
+.idioma a {
+    color: gray;
+}
+.hide {
+    display: none !important;
+}
+.menu li a, .menuProjectes li a {
+    color: black;
+}
+.header {
+    height: 100px;
+}
+#central .logo{
+    position: absolute;
+    top: 4px;
+    width: 250px;
+}
+#central .idioma{
+  position: relative;
+  top: 0px;
+  font-size: 10px;
+  text-align: right;
+    right: -10px;
+    float: right;
+}
+.idioma li, .menu li, .menuProjectes li{
+    float: right;
+    margin-right: 10px;
+}
+#central .menu
+{
+    position: relative;
+  top: 11px;
+    top: 0px\9;
+    right: -10px;
+  font-size: 11px;
+    font-family: Verdana, serif;
+    clear: both;
+}
+#central .menuProjectes
+{
+    position: relative;
+  top: 17px;
+    top: 4px\9;
+  font-size: 10px;
+  font-family: Verdana, serif;
+    clear: both;
+    right: -10px;
+    float: right;
+}
+li {
+    list-style: none;
+}
+ul {
+    padding: 0px;
+    padding: 0px\9;
+}
+.linea{
+    position: relative;
+    clear: both;
+    height: 2px;
+    top: -24px\9;
+    top: 4px;
+}
+.linea img {
+    padding: 0px;
+    padding: 0px\9;
+}
+.imatge{
+  position: relative;
+  top: 0px;
+  width: 960px;
+}
+.idioma a.seleccionat{
+  font-weight: bold;
+    color: black;
+}
+.missatge{
+    position: relative;
+    font-size: 15px;
+    top: 0px;
+    color: red;
+}
+div#inferior{
+  height: 500px;
+}
+a:link{
+  text-decoration:none;
+}
+a:visited{
+  text-decoration:none;
+}
+a:hover{
+  border: none;
+  color: black;
+  font-weight: bold;
+}
+a:link img{
+  border: none;
+  color: white;
+}
+a:visited img{
+  border: none;
+}
+a:hover img{
+  color: white;
+}
+
+/* Estils publicacions*/
+#central .projecte{
+    position: absolute;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+  font-size: 13px;
+    width: 960px;
+  font-family: Verdana, serif;
+  color: gray;
+  list-style: none;
+}
+#central .projecte li.esquerra{
+    width: 450px;
+    height: auto;
+    float: left;
+    margin-bottom: 30px;
+}
+#central .projecte li.dreta{
+    width: 450px;
+    margin-left: 60px;
+  height: auto;
+    float: left;
+    margin-bottom: 30px;
+}
+#central .projecte li img {
+    margin-top: 15px;
+    max-height: 200px;
+    max-width: 450px;
+}
+.esquerra img, .dreta img 
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.expo{
+  position: relative;
+  float: left;
+  width: 450px;
+  height: auto;
+  margin-left: 0px;
+  margin-right: 90px;
+  margin-bottom: 50px;
+  text-align: justify;
+  font-size: 13px;
+  font-family: Verdana, serif;
+  color: gray;
+}
+
+.premis{
+  position: relative;
+  float: right;
+  width: 450px;
+  height: auto;
+  margin-bottom: 50px;
+  text-align: justify;
+  font-size: 13px;
+  font-family: Verdana, serif;
+  color: gray;
+}
+.fotos{
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* Estils Estudi */
+
+#estudi, #publicacions {
+    margin-top: 20px;
+}
+#central .curriculum{
+  position: relative;
+  width: 960px;
+  height: 300px;
+  top: 20px;
+    overflow-y: auto;
+}
+#central .imatge_estudi{
+  position: relative;
+    display:block;
+  margin-right: auto;
+  margin-left: auto;
+  max-width:960px;
+  max-height: 350px;
+}
+#central .columna{
+  position: relative;
+  float: left;
+  width: 310px;
+  font-family: Verdana;
+  font-size: 13px;
+    text-align: justify;
+}
+#central .columna2{
+  position: relative;
+  float: left;
+  left: 15px;
+  width: 309px;
+  font-family: Verdana;
+  font-size: 13px;
+  text-align: justify;
+}
+#central .columna3{
+  position: relative;
+  float: left;
+  left: 32px;
+  width: 309px;
+  font-family: Verdana;
+  font-size: 13px;
+  text-align: justify;
+}  
+
+
+
+
+
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
