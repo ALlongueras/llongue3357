@@ -16,7 +16,7 @@
         //alert(nodeId);
         $('.descripcioProjecte').addClass("hide");
         $('.contenidorImatges').addClass("hide");
-        $('#imatgesProjectes .imatgeGran img').attr('src', $("#menuProjectes .petites a[data-id =" + nodeId + "]").find("img").attr('src'));
+        $('#imatgesProjectes .imatgeGran img').attr('src', $("#menuProjectes .petites .hide a[data-id =" + nodeId + "]").find("img").attr('src'));
     });
     $('#menuProjectes .petites li').mouseleave(function () {
         $('.descripcioProjecte').removeClass("hide");

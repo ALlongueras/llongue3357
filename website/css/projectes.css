@@ -51,6 +51,7 @@
 }
 #imatgesProjectes .contenidorImatges
 {
+    background-color: #666666;
     position: absolute;
     bottom: 10px;
     width: 246px;
@@ -66,8 +67,6 @@
 #imatgesProjectes .contenidorImatges li img
 {
     display: block;
-    max-height: 40px;
-    max-width: 50px;
 }
 #imatgesProjectes .contenidorImatges li img:hover
 {
