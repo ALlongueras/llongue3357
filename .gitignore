@@ -1,9 +1,12 @@
 # Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
 bin
+App_data
 obj
+
+_ReSharper*/
 
 # mstest test results
 TestResults
 
-_ReSharper.llonguerasclotetWebsite/
-website/App_Data/
+
+website/App_Data/umbraco.config
