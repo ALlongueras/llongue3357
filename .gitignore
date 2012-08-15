@@ -17,3 +17,5 @@ umbraco/
 umbraco_client/
 default.aspx
 website/App_Data/umbraco.config
+website/bin/*.dll
+website/App_Data/*
