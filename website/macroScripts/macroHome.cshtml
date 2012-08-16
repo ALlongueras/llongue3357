@@ -1,24 +1,26 @@
-﻿@using umbraco;
-@using umbraco.MacroEngines;
-@using DigibizAdvancedMediaPicker;
-@inherits umbraco.MacroEngines.DynamicNodeContext
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
 
-<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>
-<script src="/scripts/home.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"> </script>
+<script src="/scripts/home.js" type="text/javascript"> </script>
 
 <div id="slideshow">
     @{
         if (@Model.HasValue("slideImatges"))
         {
-            dynamic imatges = @Model.slideImatges.mediaItem;
-            if (imatges.Count()!=0)
-            {
-                foreach (var imatge in imatges)
+                foreach (dynamic imatge in Model.Descendants("ImatgePortada"))
                 {
-                    <img src="@imatge.Image.umbracoFile" alt="@imatge.Image.nodeName @Dictionary.keywords"/>
+                    if (imatge.HasProperty("titolImatge"))
+                    {
+                        <h1>@imatge.GetProperty("titolImatge").Value</h1>
+                    }
+                    if (imatge.HasProperty("subtitolImatge"))
+                    {
+                        <h2>@imatge.GetProperty("subtitolImatge").Value</h2>
+                    }
+                    <a href="@Model.NodeById(@imatge.linkImatge).Url">
+                    <img src="@imatge.imatgeSlide.mediaItem[0].Image.umbracoFile" alt="@imatge.titolImatge @Dictionary.keywords"/>
+                    </a>
                 }
-            }
         }
     }
 </div>
-
