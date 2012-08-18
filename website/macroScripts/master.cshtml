@@ -41,7 +41,7 @@
         <ul class="menu">
             @foreach (dynamic item in @tematica.Descendants(2).Take(2))
             {
-                string name = @item.IsFirst() ? @Dictionary.publicacionsPremis : @Dictionary.estudi;
+                string name = @item.NodeTypeAlias()=="estudi" ? @Dictionary.estudi : @Dictionary.publicacionsPremis;
                 <li>
                     <a class="@(item.Id==Model.Id?"seleccionat":"")" href="@item.Url">@name.ToUpper()</a>
                 </li>

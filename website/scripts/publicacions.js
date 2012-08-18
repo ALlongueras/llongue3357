@@ -9,3 +9,45 @@
         return false;
     });
 });
+$(document).ready(function () {
+//    $(".publicacionsPremis img").click(function() {
+//        $(".publicacionsPremis").find("#publicacions-fancybox").removeClass("#publicacions-fancybox");
+//        this.add
+//    });
+    $("#publicacions-fancybox").fancybox({
+        helpers: {
+            title: {
+                type: 'float'
+            }
+        }
+    });
+
+    //    $("#single_2").fancybox({
+    //        openEffect: 'elastic',
+    //        closeEffect: 'elastic',
+
+    //        helpers: {
+    //            title: {
+    //                type: 'inside'
+    //            }
+    //        }
+    //    });
+
+    //    $("#single_3").fancybox({
+    //        openEffect: 'none',
+    //        closeEffect: 'none',
+    //        helpers: {
+    //            title: {
+    //                type: 'outside'
+    //            }
+    //        }
+    //    });
+
+    //    $("#single_4").fancybox({
+    //        helpers: {
+    //            title: {
+    //                type: 'over'
+    //            }
+    //        }
+    //    });
+}); 
