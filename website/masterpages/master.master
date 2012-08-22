@@ -5,7 +5,7 @@
   <!DOCTYPE html>
 <html>
 <head>
-<title>LlonguerasClotet Arquitectes</title>
+    <umbraco:Macro Alias="MetaTags" runat="server"></umbraco:Macro>
     <link href="/css/estil.css" rel="stylesheet" type="text/css" />
     <%--<link href="/css/gallery.css" rel="stylesheet" type="text/css" />--%>
     <link href="/css/projectes.css" rel="stylesheet" type="text/css" />
