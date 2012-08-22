@@ -8,19 +8,22 @@
         $('#publicacions .projecte').isotope({ filter: selector });
         return false;
     });
-});
-$(document).ready(function () {
-//    $(".publicacionsPremis img").click(function() {
-//        $(".publicacionsPremis").find("#publicacions-fancybox").removeClass("#publicacions-fancybox");
-//        this.add
-//    });
-    $("#publicacions-fancybox").fancybox({
+    $(".publicacionsPremis a").click(function () {
+//        $(".publicacionsPremis").hasClass(".publicacions-fancybox").removeClass("publicacions-fancybox");
+        $(this).addClass("publicacions-fancybox");
+        $(".publicacions-fancybox").fancybox({
         helpers: {
             title: {
-                type: 'float'
+                type: 'outside'
             }
         }
     });
+    });
+});
+
+$(document).ready(function () {
+    
+    
 
     //    $("#single_2").fancybox({
     //        openEffect: 'elastic',
@@ -50,4 +53,4 @@ $(document).ready(function () {
     //            }
     //        }
     //    });
-}); 
+});

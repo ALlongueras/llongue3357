@@ -16,8 +16,8 @@
 <div class="cos_central" id="publicacions">
     @{
         <ul id="filters">
-          <li><a href="#" data-filter=".publicacio">@Dictionary.publicacions.ToUpper()</a></li>
-          <li><a href="#" data-filter=".premi">@Dictionary.premis.ToUpper()</a></li>
+            <li><a href="#" data-filter=".publicacio">@Dictionary.publicacions.ToUpper()</a></li>
+            <li><a href="#" data-filter=".premi">@Dictionary.premis.ToUpper()</a></li>
         </ul>
         <div class="projecte">
             @{
@@ -28,8 +28,8 @@
                         if (item.HasValue("imatge"))
                         {
                             <div class="publicacionsPremis @(i == 0 ? "publicacio" : "premi") hide">
-                                <a id="publicacions-fancybox" rel="publicacions-fancybox" href="@item.imatge.mediaItem[0].Image.umbracoFile">
-                                <img src="@item.imatge.mediaItem[0].Image.umbracoFile"  height="250" width="300" alt="@item.Name @Dictionary.keywords"/>
+                                <a href="@item.imatge.mediaItem[0].Image.umbracoFile" title="@item.descripcio">
+                                    <img src="@item.imatge.mediaItem[0].Image.umbracoFile" height="250" width="300" alt="@item.Name @Dictionary.keywords"/>
                                 </a>
                                 <span></span>
                                 <p>@item.descripcio</p>    
