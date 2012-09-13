@@ -3,10 +3,15 @@
 @using System.Linq
 @inherits umbraco.MacroEngines.DynamicNodeContext
 
-<script
-    src="/scripts/projectes.js" type="text/javascript">
-</script>
+<script src="/scripts/fancybox/jquery.fancybox.pack.js" type="text/javascript"> </script>
+<script src="/scripts/projectes.js" type="text/javascript"> </script>
+<script src="/scripts/fancybox/helpers/jquery.fancybox-buttons.js" type="text/javascript"> </script>
+<script src="/scripts/fancybox/helpers/jquery.fancybox-media.js" type="text/javascript"> </script>
+<script src="/scripts/fancybox/helpers/jquery.fancybox-thumbs.js" type="text/javascript"> </script>
 
+<link href="/css/fancybox/jquery.fancybox-thumbs.css" rel="stylesheet" type="text/css" />
+<link href="/css/fancybox/jquery.fancybox-buttons.css" rel="stylesheet" type="text/css" />
+<link href="/css/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
 <div id="imatgesProjectes">
     <div class="imatgeGran">
         <img src="@Model.imatgesDelProjecte.mediaItem[0].Image.umbracoFile" alt="@Model.Name"/>
@@ -33,19 +38,32 @@
         }
         <p>@Model.descripcio</p>
     </div>
-    <ul class="contenidorImatges">
+    <div class="contenidorImatges">
         @{
-            if (Model.HasValue("imatgesDelProjecte"))
+            List<object> imatges = new List<object>();
+            string[] classeProjecte = new string[] {"primeraFila", "segonaFila", "terceraFila"};
+            foreach (var imatge in Model.imatgesDelProjecte.mediaItem)
             {
-                foreach (var imatge in Model.imatgesDelProjecte.mediaItem)
-                {
-                    <li>
-                        <a href="#">
-                            <img src="@imatge.Image.umbracoFile" height="40" width="50" alt="@Model.Name"/>
-                        </a>
-                    </li> 
-                }
+                imatges.Add(imatge.Image.umbracoFile);
             }
+            float limitImatges = (float) @imatges.Count()/(float) 4;
+            for (var i = 0; i < Math.Ceiling(limitImatges); i++)
+            {
+                <ul class="@classeProjecte[i]">
+                    @foreach (var imatge in imatges.Take(4))
+                    {
+                        <li>
+                            <a class="fancybox-thumb" rel="imatges-thumb" href="@imatge">
+                                <img src="@imatge" height="40" width="50" alt="@Model.Name"/>
+                            </a>
+                        </li>
+                    }
+                </ul>
+
+                imatges.RemoveRange(0, @imatges.Count() > 4 ? 4 : @imatges.Count());
+            }
+            <input type="hidden" id="valorFilesImatges" value="@Math.Ceiling(limitImatges)"/>
+            <input type="hidden" id="idFilesImatges" value="#imatgesProjectes .contenidorImatges"/>
         }
-    </ul>
+    </div>
 </div>

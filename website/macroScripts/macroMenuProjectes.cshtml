@@ -1,40 +1,21 @@
-﻿@using umbraco
-@using umbraco.MacroEngines;
-@inherits umbraco.MacroEngines.DynamicNodeContext
-<script
-    src="/scripts/projectes.js" type="text/javascript">
-</script>
-@{
-    dynamic posicio = @Model.AncestorOrSelf("master");
-}
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
 
-@*<div class="cos_central" id="central">*@
-<div class="fotosprojectes" id="menuProjectes">
-    @*<div class="scrollbar">
-        <div class="track">
-            <div class="thumb">
-                <div class="end"></div>
-            </div>
-        </div>
-    </div>*@
-    @*<div class="conjuntImatges">*@
-        <ul class="petites">
-            @{int cont = 0;}
-            @foreach (dynamic item in @Model.Parent.Children)
+<div id="menuProjectes">
+    <ul class="petites">
+        @foreach (dynamic item in @Model.Parent.Children)
+        {
+            if (item.HasValue("imatgePetitaMenuProjectes"))
             {
-                if (item.HasValue("imatgePetitaMenuProjectes"))
-                {
-                    <li>
-                        <a data-id="@item.Id" href="@item.NiceUrl"><img src="@item.imatgePetitaMenuProjectes.mediaItem[0].Image.umbracoFile" height="95" alt="@item.Name"/></a>
-                    </li>
-                }
-                if (item.HasValue("imatgePrevia"))
-                {
-                    <li class="@item.Id hide">
-                        <a data-id="@item.Id" href="@item.NiceUrl"><img src="@item.imatgePrevia.mediaItem[0].Image.umbracoFile" max-height="450" max-widht="700" alt="@item.Name"/></a>
-                    </li>
-                }
+                <li>
+                    <a data-id="@item.Id" href="@item.NiceUrl"><img src="@item.imatgePetitaMenuProjectes.mediaItem[0].Image.umbracoFile" height="95" alt="@item.Name"/></a>
+                </li>
             }
-        </ul>
-   @*</div>*@
-</div> 
+            if (item.HasValue("imatgePrevia"))
+            {
+                <li class="@item.Id hide">
+                    <a data-id="@item.Id" href="@item.NiceUrl"><img src="@item.imatgePrevia.mediaItem[0].Image.umbracoFile" max-height="450" max-widht="700" alt="@item.Name"/></a>
+                </li>
+            }
+        }
+    </ul>
+</div>
