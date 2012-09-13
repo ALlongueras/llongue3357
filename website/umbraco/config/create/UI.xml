@@ -337,18 +337,4 @@
       <delete assembly="umbraco" type="cms.presentation.user.UserTypeTasks" />
     </tasks>
   </nodeType>
-  <nodeType alias="init301URLTracker">
-    <header>301 URL Tracker</header>
-    <usercontrol>/create/create301URLTracker.ascx</usercontrol>
-    <tasks>
-      <create assembly="InfoCaster.Umbraco._301UrlTracker" type="Tasks301URLTracker" />
-    </tasks>
-  </nodeType>
-  <nodeType alias="301URLTracker">
-    <header>301 URL Tracker</header>
-    <usercontrol>/create/create301URLTracker.ascx</usercontrol>
-    <tasks>
-      <delete assembly="InfoCaster.Umbraco._301UrlTracker" type="Tasks301URLTracker" />
-    </tasks>
-  </nodeType>
 </createUI>
