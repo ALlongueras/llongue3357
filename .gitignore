@@ -19,3 +19,7 @@ default.aspx
 website/App_Data/umbraco.config
 website/bin/*.dll
 website/App_Data/*
+website/App_Data/TEMP/*
+website/App_Data/TEMP/ExamineIndexes/Internal/ALBERT-PC.lck
+website/App_Data/TEMP/ExamineIndexes/Internal/Index/segments.gen
+website/media/*

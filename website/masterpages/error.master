@@ -1,0 +1,9 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/master.master" AutoEventWireup="true" %>
+
+
+<asp:Content ContentPlaceHolderId="mainContent" runat="server">
+  <!-- Insert "mainContent" markup here -->
+  <img src="http://llonguerasclotet.cat/media/363/logoreduit.jpg" width="250" alt="llongueras clotet arquitectes">
+  <h1>PÀGINA NO DISPONIBLE, PERDONEU LES MOLÈSTIES</h1>
+  <img src="http://llonguerasclotet.cat/media/16242/portada7.jpg" alt="llongueras clotet arquitectes">
+</asp:Content>

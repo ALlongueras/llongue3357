@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/master.master" AutoEventWireup="true" %>
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/base.master" AutoEventWireup="true" %>
 
  
   

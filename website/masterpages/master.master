@@ -39,31 +39,13 @@
 
         <body>
             <div class="cos_central" id="central">
-  
-                <!-- Macro Header -->
-  
-                <umbraco:Macro Alias="Master" runat="server"></umbraco:Macro>
-  
-                <!-- Macro Central--> 
-   
-                <asp:ContentPlaceHolder Id="macroCentral" runat="server">
-                    <!-- Insert default "macroCentral" markup here -->
-                    <umbraco:Item field="macroCentral" runat="server" />
-                </asp:ContentPlaceHolder>
-
-    
-                <!-- Macro Central 2-->
-   
-                <asp:ContentPlaceHolder Id="macroCentral2" runat="server">
-                    <!-- Insert default "macroCentral2" markup here -->
-                    <umbraco:Item field="macro_central2" runat="server" />
-                </asp:ContentPlaceHolder>
+              
+<asp:ContentPlaceHolder Id="mainContent" runat="server">
+  <!-- Insert default "mainContent" markup here -->
+</asp:ContentPlaceHolder>
 
   
-   
-                <asp:ContentPlaceHolder Id="body_content" runat="server">
-  
-                </asp:ContentPlaceHolder> 
+                 
             </div> 
 
         </body>
